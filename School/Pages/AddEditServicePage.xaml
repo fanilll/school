@@ -1,0 +1,77 @@
+﻿<Page x:Class="School.Pages.AddEditServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="470" d:DesignWidth="800"
+      Title="AddEditServicePage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"></ColumnDefinition>
+            <ColumnDefinition Width="332*"></ColumnDefinition>
+            <ColumnDefinition Width="332*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Идентификатор</TextBlock>
+                <TextBox IsReadOnly="True" Text="{Binding ID}" Background="WhiteSmoke"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Название</TextBlock>
+                <TextBox Background="WhiteSmoke" Height="35" TextWrapping="Wrap" Text="{Binding Title}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Стоимость</TextBlock>
+                <TextBox Background="WhiteSmoke" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Cost}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Длительность сек.</TextBlock>
+                <TextBox Background="WhiteSmoke" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding DurationInSeconds}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Описание</TextBlock>
+                <TextBox  Background="WhiteSmoke" TextWrapping="Wrap" Text="{Binding Description}" Height="100" ></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Скидка</TextBlock>
+                <TextBox Background="WhiteSmoke" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Discount}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="SaveBtn" Click="SaveBtn_Click">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel Margin="50 0"></StackPanel>
+            <Border  BorderBrush="#FF868686" BorderThickness="1">
+                <Image x:Name="MainImage" Source = "{Binding MainImage}" Height="120" ></Image>
+            </Border>
+            <Button x:Name="AddImgBtn" Click="AddImgBtn_Click">Добавить изображение</Button>
+            <StackPanel x:Name="StackPanelPhoto"  Visibility="Collapsed">
+                <ListView x:Name="PhotoList" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          Width="330" Height="110">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Height="100" Source="{Binding PhotoByte}"></Image>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button x:Name="AddImageBtn" Click="AddImageBtn_Click">Добавить</Button>
+                    <Button x:Name="DeleteImageBtn" Click="DeleteImageBtn_Click">Удалить</Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

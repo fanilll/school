@@ -4,6 +4,28 @@
              xmlns:local="clr-namespace:School"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value ="Comic Sans MS"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="4"></Setter>
+            <Setter Property="Background" Value="#FF04A0FF"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="180"></Setter>
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="180"></Setter>
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

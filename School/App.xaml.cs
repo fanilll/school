@@ -1,4 +1,5 @@
-﻿using System;
+﻿using School.Components;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,7 @@ namespace School
     /// </summary>
     public partial class App : Application
     {
+        static public LSEntities db = new LSEntities();
+        public static bool isAdmin = false;
     }
 }

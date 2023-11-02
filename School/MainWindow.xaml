@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="143*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"></ColumnDefinition>
+            <ColumnDefinition Width="375*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Rectangle Fill="#FFE7F9BF" Grid.ColumnSpan="2" ></Rectangle>
+        <Rectangle Fill="#FFE7F9BF" Grid.RowSpan="2"></Rectangle>
+        <Image Source="/res/school_logo.png" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" >
+            <Button x:Name="BackBut" Click="BackBut_Click">Назад</Button>
+            <Button x:Name="ExitBut" Click="ExitBut_Click">Выход</Button>
+        </StackPanel>
+
+        <TextBlock x:Name="TitleTb" Grid.Column="1" FontSize="20">Школа языков "Леарн"</TextBlock>
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>

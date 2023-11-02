@@ -1,4 +1,6 @@
-﻿using System;
+﻿using School.Components.PartialClass;
+using School.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,30 @@ namespace School
         public MainWindow()
         {
             InitializeComponent();
+            navigation.mainWindow = this;
+            //var path = @"C:\Users\fhusn\Desktop\";
+            //foreach (var item in App.db.Service.ToArray())
+            //{
+            //    var fullPath = path + item.MainImagePath;
+            //    item.MainImage = File.ReadAllBytes(fullPath);
+            //}
+            //App.db.SaveChanges();
+            navigation.NextPage(new PageComponent("Авторизация",
+                new Autoris()));
+        }
+
+        private void BackBut_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.BackPage();
+
+        }
+
+
+        private void ExitBut_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.ClearHistory();
+            navigation.NextPage(new PageComponent("Авторизация",
+                new Autoris()));
         }
     }
 }
