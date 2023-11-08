@@ -39,6 +39,7 @@
         </ScrollViewer>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="AddBut" Grid.Row="2" Width="100" Click="AddBut_Click">Добавить</Button>
+            <Button x:Name="EntryBtn" Grid.Row="2" Width="150" Click="EntryBtn_Click">Ближайшие записи</Button>
             <TextBlock Margin="20 0" x:Name="CountDataTb"></TextBlock>
         </StackPanel>
     </Grid>

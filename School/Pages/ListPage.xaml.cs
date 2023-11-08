@@ -104,5 +104,10 @@ namespace School.Pages
             navigation.NextPage(new PageComponent("Добавление услуги",
                 new AddEditServicePage(new Service())));
         }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent("Ближайшие записи", new EntryPage()));
+        }
     }
 }
